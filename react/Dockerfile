@@ -3,7 +3,7 @@ FROM node:latest
 # コンテナ内で作業するディレクトリを指定
 WORKDIR /usr/src/app
 # package.jsonとyarn.lockを/usr/src/appにコピー
-COPY ["package.json", "yarn.lock", "./"]
+COPY ["package.json", "./"]
 # パッケージをインストール
 RUN yarn install
 # ファイルを全部作業用ディレクトリにコピー
