@@ -90,8 +90,8 @@ func main() {
 
 	// CORS 対応
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:3000"}
-	// config.AllowOrigins = []string{"http://18.183.92.223:3000"}
+	// config.AllowOrigins = []string{"http://localhost:3000"}
+	config.AllowOrigins = []string{"http://35.77.214.212:3000"}
 	router.Use(cors.New(config))
 
 	router.GET("/health_data", getHealthdata)

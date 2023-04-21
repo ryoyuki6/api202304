@@ -7,8 +7,8 @@ const Nav = () => {
   const [getData, setGetData] = useState([]);
 
   const fetchData = async () => {
-    // const response = await axios.get("http://18.183.92.223:8080/health_data");
-    const response = await axios.get("http://localhost:8081/health_data");
+    const response = await axios.get("http://35.77.214.212:8081/health_data");
+    // const response = await axios.get("http://localhost:8081/health_data");
     setGetData(response.data);
   };
 
