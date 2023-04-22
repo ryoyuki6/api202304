@@ -8,6 +8,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var IpAddress string = "localhost" // 頭文字を大文字にして公開オブジェクト
+
+// func ipAddress() string {
+// 	return "localhost"
+// }
+
 type HealthData struct {
 	ID		int		`json:"id"`
 	Month	int		`json:"month"`
@@ -90,8 +96,9 @@ func main() {
 
 	// CORS 対応
 	config := cors.DefaultConfig()
-	// config.AllowOrigins = []string{"http://localhost:3000"}
-	config.AllowOrigins = []string{"http://35.77.214.212:3000"}
+	ip := IpAddress
+	endpoint := "http://" + ip + ":3000"
+	config.AllowOrigins = []string{endpoint}
 	router.Use(cors.New(config))
 
 	router.GET("/health_data", getHealthdata)

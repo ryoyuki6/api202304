@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useKeycloak } from "@react-keycloak/web";
+import { ipAddress } from "./env";
 
 const Nav = () => {
   const { keycloak, initialized } = useKeycloak();
   const [getData, setGetData] = useState([]);
 
   const fetchData = async () => {
-    const response = await axios.get("http://35.77.214.212:8081/health_data");
-    // const response = await axios.get("http://localhost:8081/health_data");
+    const url0 = "http://" + ipAddress + ":8081/health_data";
+    const response = await axios.get(url0);
     setGetData(response.data);
   };
 
