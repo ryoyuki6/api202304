@@ -8,11 +8,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var IpAddress string = "localhost" // 頭文字を大文字にして公開オブジェクト
-
-// func ipAddress() string {
-// 	return "localhost"
-// }
+// var IpAddress string = "localhost" // 頭文字を大文字にして公開オブジェクト
+var IpAddress string = "18.183.1.167" // 頭文字を大文字にして公開オブジェクト
 
 type HealthData struct {
 	ID		int		`json:"id"`
